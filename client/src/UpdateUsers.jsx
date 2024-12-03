@@ -11,7 +11,7 @@ const UpdateUsers = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/getUser/" + id)
+      .get("https://users-crud-server.vercel.app/getUser/" + id)
       .then((result) => {
         console.log(result.data);
         setName(result.data.name);
@@ -24,7 +24,7 @@ const UpdateUsers = () => {
   const Update = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3001/updateUser/" + id, { name, email, age })
+      .put("https://users-crud-server.vercel.app/updateUser/" + id, { name, email, age })
       .then((result) => {
         console.log(result);
         navigate("/");
