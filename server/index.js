@@ -7,13 +7,7 @@ const cors = require("cors");
 const UserModel = require("./models/Users");
 
 const app = express();
-app.use(cors(
-  {
-    origin: "https://users-crud-server.vercel.app",
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
-  }
-));
+app.use(cors());
 app.use(express.json());
 
 mongoose
