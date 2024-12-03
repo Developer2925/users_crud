@@ -12,14 +12,14 @@ const Users = () => {
   // http://localhost:3001
   useEffect(() => {
     axios
-      .get("https://users-crud-server.vercel.app")
+      .get("http://localhost:3001")
       .then((result) => setUsers(result.data))
       .catch((error) => console.log(error));
   });
 
   const handleDelete = (id) => {
     axios
-      .delete("https://users-crud-server.vercel.app/deleteUser/" + id)
+      .delete("http://localhost:3001/deleteUser/" + id)
       .then((result) => {
         console.log(result);
         window.location.reload();
